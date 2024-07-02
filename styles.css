@@ -5,11 +5,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* min-height: 100vh;
-    margin: 0; */
     padding: 20px;
     transition: background 0.5s;
-    /* box-sizing: border-box; */
   }
   
   .container {
@@ -45,6 +42,13 @@ body {
     border-radius: 5px;
     border: none;
     font-size: 16px;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  input:focus {
+    border: 2px solid #4b6cb7;
+    outline: none;
+    box-shadow: 0 0 5px rgba(75, 108, 183, 0.5);
   }
   
   button {
@@ -53,21 +57,38 @@ body {
     border-radius: 5px;
     border: none;
     font-size: 16px;
-    background: #c1d35a;
-    color: #000000;
+    background: linear-gradient(90deg, #4b6cb7, #182848);
+    color: #fff;
     cursor: pointer;
     transition: background 0.3s, transform 0.2s;
   }
   
   button:hover {
-    background: #289f3e;
+    background: linear-gradient(90deg, #6a82fb, #fc5c7d);
     transform: scale(1.1);
+  }
+  
+  button:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease-in-out;
+  }
+  
+  #error-message {
+    color: #ff6b6b;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    display: none;
   }
   
   #change-due {
     margin-top: 20px;
     font-size: 18px;
     font-weight: bold;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #4b6cb7;
     transition: opacity 0.5s;
     opacity: 0;
   }
@@ -81,10 +102,14 @@ body {
   }
   
   .image-container img {
-    max-width: 50%;
+    max-width: 40%;
     border-radius: 10px;
+    transition: transform 0.3s;
   }
-
+  
+  .image-container img:hover {
+    transform: scale(1.1);
+  }
   
   .footer {
     width: 100%;
@@ -92,8 +117,8 @@ body {
     padding: 1rem 0;
     background: linear-gradient(90deg, #182848, #4b6cb7);
     font-size: 20px;
+    position: sticky;
     bottom: 0;
-    position: fixed;
   }
   
   .footer a {
@@ -109,8 +134,22 @@ body {
     margin-right: 5px;
     transition: transform 0.5s;
   }
-
+  
   .github-logo:hover {
     transform: scale(1.2);
   }
+  
+  /* @media (max-width: 768px) {
+    .container {
+      max-width: 90%;
+    }
+  
+    .image-container img {
+      max-width: 100%;
+    }
+  
+    button {
+      width: 100%;
+    }
+  } */
   
