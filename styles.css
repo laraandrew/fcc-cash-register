@@ -1,0 +1,118 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(90deg, #4b6cb7, #182848);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    transition: background 0.5s;
+    box-sizing: border-box;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+    max-width: 400px;
+    width: 100%;
+    margin: 20px;
+    overflow-y: auto;
+    max-height: 80vh;
+  }
+  
+  .container:hover {
+    transform: scale(1.05);
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin: 10px 0 5px;
+  }
+  
+  input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    background: #182848;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: #4b6cb7;
+  }
+  
+  #change-due {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: opacity 0.5s;
+    opacity: 0;
+  }
+  
+  #change-due.show {
+    opacity: 1;
+  }
+  
+  .image-container {
+    margin: 10px 0;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+  
+  .image-container img:hover {
+    transform: scale(1.1);
+  }
+  
+  .footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background: linear-gradient(90deg, #182848, #4b6cb7);
+    font-size: 14px;
+    bottom: 0;
+    position: fixed;
+  }
+  
+  .footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
+  .github-logo {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  
