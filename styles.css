@@ -1,12 +1,24 @@
-body {
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  body {
     font-family: 'Roboto', sans-serif;
     background: linear-gradient(90deg, #4b6cb7, #182848);
     color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
     transition: background 0.5s;
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
   }
   
   .container {
@@ -16,8 +28,7 @@ body {
     border-radius: 10px;
     transition: background 0.5s, transform 0.5s;
     max-width: 400px;
-    width: 100%;
-    margin: 20px;
+    margin: 20px auto;
     overflow-y: auto;
     max-height: 80vh;
   }
@@ -73,7 +84,7 @@ body {
     transition: transform 0.1s ease-in-out;
   }
   
-  #error-message {
+  .error-message {
     color: #ff6b6b;
     font-size: 14px;
     margin-top: -10px;
@@ -102,7 +113,7 @@ body {
   }
   
   .image-container img {
-    max-width: 40%;
+    max-width: 50%;
     border-radius: 10px;
     transition: transform 0.3s;
   }
@@ -117,8 +128,7 @@ body {
     padding: 1rem 0;
     background: linear-gradient(90deg, #182848, #4b6cb7);
     font-size: 20px;
-    position: sticky;
-    bottom: 0;
+    margin-top: auto;
   }
   
   .footer a {

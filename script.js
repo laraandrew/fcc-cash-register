@@ -62,7 +62,7 @@ purchaseBtn.addEventListener('click', () => {
   
   // Calculate and display the result
   const result = checkCashRegister(price, cash, cid);
-  changeDueDiv.textContent = result;
+  changeDueDiv.innerHTML = result; // Use innerHTML to allow HTML content
   changeDueDiv.classList.add('show');
 });
 
@@ -105,6 +105,6 @@ function checkCashRegister(price, cash, cid) {
     return "Status: INSUFFICIENT_FUNDS";
   }
 
-  // Return the status and the breakdown of change
-  return `Status: OPEN\n${changeArr.join('\n')}`;
+  // Return the status and the breakdown of change with each unit on a new line
+  return `Status: OPEN<br>${changeArr.join('<br>')}`;
 }
