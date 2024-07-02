@@ -5,11 +5,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
-    margin: 0;
+    /* min-height: 100vh;
+    margin: 0; */
     padding: 20px;
     transition: background 0.5s;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
   }
   
   .container {
@@ -53,14 +53,15 @@ body {
     border-radius: 5px;
     border: none;
     font-size: 16px;
-    background: #182848;
-    color: #fff;
+    background: #c1d35a;
+    color: #000000;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
   }
   
   button:hover {
-    background: #4b6cb7;
+    background: #289f3e;
+    transform: scale(1.1);
   }
   
   #change-due {
@@ -80,21 +81,17 @@ body {
   }
   
   .image-container img {
-    max-width: 100%;
+    max-width: 50%;
     border-radius: 10px;
-    transition: transform 0.3s;
   }
-  
-  .image-container img:hover {
-    transform: scale(1.1);
-  }
+
   
   .footer {
     width: 100%;
     text-align: center;
-    padding: 10px 0;
+    padding: 1rem 0;
     background: linear-gradient(90deg, #182848, #4b6cb7);
-    font-size: 14px;
+    font-size: 20px;
     bottom: 0;
     position: fixed;
   }
@@ -105,14 +102,15 @@ body {
     font-weight: bold;
   }
   
-  .footer a:hover {
-    text-decoration: underline;
-  }
-  
   .github-logo {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     vertical-align: middle;
     margin-right: 5px;
+    transition: transform 0.5s;
+  }
+
+  .github-logo:hover {
+    transform: scale(1.2);
   }
   
