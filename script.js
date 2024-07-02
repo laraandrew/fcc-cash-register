@@ -18,26 +18,32 @@ let cid = [
 ];
 
 const currencyUnits = [
-    ["ONE HUNDRED", 100],
-    ["TWENTY", 20],
-    ["TEN", 10],
-    ["FIVE", 5],
-    ["ONE", 1],
-    ["QUARTER", 0.25],
-    ["DIME", 0.1],
-    ["NICKEL", 0.05],
-    ["PENNY", 0.01]
-  ];
+  ["ONE HUNDRED", 100],
+  ["TWENTY", 20],
+  ["TEN", 10],
+  ["FIVE", 5],
+  ["ONE", 1],
+  ["QUARTER", 0.25],
+  ["DIME", 0.1],
+  ["NICKEL", 0.05],
+  ["PENNY", 0.01]
+];
 
 // Event listener for purchase button
 purchaseBtn.addEventListener('click', () => {
   const price = parseFloat(priceInput.value);
   const cash = parseFloat(cashInput.value);
+  
   if (isNaN(price) || isNaN(cash)) { // handle invalid inputs
     alert('Please enter valid amounts for price and cash given.');
     return;
   }
-
+  
+  if (cash < price) {
+    alert("Customer does not have enough money to purchase the item");
+    return;
+  }
+  
   const result = checkCashRegister(price, cash, cid);
   changeDueDiv.textContent = result;
   changeDueDiv.classList.add('show');
@@ -45,6 +51,9 @@ purchaseBtn.addEventListener('click', () => {
 
 // Function to check cash register and calculate change
 function checkCashRegister(price, cash, cid) {
+  if (cash === price) {
+    return "No change due - customer paid with exact cash";
+  }
 
   let change = cash - price;
   let totalCid = cid.reduce((sum, [unit, amount]) => sum + amount, 0).toFixed(2);
@@ -66,7 +75,8 @@ function checkCashRegister(price, cash, cid) {
       cid.find(c => c[0] === unit)[1] -= value;
     }
     if (amount > 0) {
-      changeArr.push(`${unit}: $${amount.toFixed(2)}`);
+      const count = (amount / value).toFixed(0);
+      changeArr.push(`${unit}: ${count} ($${amount.toFixed(2)})`);
     }
   }
 
